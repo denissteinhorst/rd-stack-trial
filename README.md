@@ -62,6 +62,12 @@ In case you want to trace my steps and see how I got here, here is a list of com
 - # Add E2E-Test, Add run-scripts using start-server-and-test
 - pnpm test:e2e # Check if the cypress is working 
 - git add . && git commit -m "Add Cypress" # Commit the changes
+
+# I18N
+- npx nuxi@latest module add i18n
+- # Add I18N Config as described in the documentation
+- pnpm dev # Check if the I18N is working using the example code
+- git add . && git commit -m "Add I18N" # Commit the changes
 ```
 
 ## Documentation
@@ -76,3 +82,5 @@ As I really disliked the cluttered `Command History`-Section, I decided to move 
 - [Vitest](https://nuxt.com/docs/getting-started/testing)
 - [Cypress](https://docs.cypress.io/guides/component-testing/vue/overview)
 - [start-server-and-test](https://github.com/bahmutov/start-server-and-test)
+- [I18N](https://i18n.nuxtjs.org/docs/getting-started)
+```
