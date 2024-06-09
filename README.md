@@ -5,12 +5,18 @@ just a quick test of a tech stack I would like to try ;)
 This project uses [pnpm](https://pnpm.io/) as the package manager. You can install it by running the following command:
 `npm install -g pnpm` assuming you have Node.js installed. ;)
 
+It also uses NVM to manage the Node.js version in the first place. You can install it by having a look at the ["Installing and Updating"](https://github.com/nvm-sh/nvm?tab=readme-ov-file#installing-and-updating) section of their Repository.
+
 ```bash
 pnpm install # install dependencies
-pnpm run dev # Start the development server on `http://localhost:3000`
-pnpm run build # Build the application for production
-pnpm run preview # Locally preview production build
+pnpm dev # Start the development server on `http://localhost:3000`
+pnpm build # Build the application for production
+pnpm preview # Locally preview production build
+pnpm postinstall # Run nuxt post install script
+pnpm test:unit # Run unit tests
+pnpm test:unit-ui # Run unit tests with UI
 ```
+
 ## Command History
 In case you want to trace my steps and see how I got here, here is a list of commands I ran to get to this point.
 
@@ -27,24 +33,35 @@ In case you want to trace my steps and see how I got here, here is a list of com
 # TAILWIND
 - pnpm add -D tailwindcss postcss autoprefixer # Install Tailwind CSS
 - pnpx tailwindcss init # Create a Tailwind CSS config file
-- # Add PostCSS config, Template-Paths, Directives and Global styles as described in the [documentation](https://tailwindcss.com/docs/guides/nuxtjs)
+- # Add PostCSS config, Template-Paths, Directives and Global styles as described in the documentation
 - git add . && git commit -m "Add Tailwind" # Commit the changes
 
 # Apollo
 - pnpm add -D @nuxtjs/apollo@next
-- # Enable Module, Add Nuxt-Apollo Config as described in the [documentation](https://apollo.vuejs.org/guide/apollo/)
+- # Enable Module, Add Nuxt-Apollo Config as described in the documentation
 - pnpm dev # Check if the Apollo is working using the example code
 - git add . && git commit -m "Add Apollo" # Commit the changes
 
 # Pinia
 - pnpm add @pinia/nuxt
-- # Enable Module, Add Nuxt-Pinia Config as described in the [documentation](https://pinia.vuejs.org/ssr/nuxt.html)
+- # Enable Module, Add Nuxt-Pinia Config as described in the documentation
 - pnpm dev # Check if the pinia is working using the example code
 - git add . && git commit -m "Add Pinia" # Commit the changes
 
 # Vitest
 - pnpm add -D @nuxt/test-utils vitest @vue/test-utils happy-dom
-- # Add Vitest Config as described in the [documentation](https://vitest.io/docs/getting-started/nuxt)
+- # Add Vitest Config as described in the documentation
 - # Add run-scripts, moved app to BasicApp Component, added a test for to check if the tests are working
 - git add . && git commit -m "Add Vitest" # Commit the changes
 ```
+
+## Documentation
+As I really disliked the cluttered `Command History`-Section, I decided to move the documentation links to this section.
+
+- [PNPM](https://pnpm.io/installation)
+- [NVM](https://github.com/nvm-sh/nvm/blob/master/README.md)
+- [Nuxt.js](https://nuxt.com/docs/getting-started/installation)
+- [Tailwind CSS](https://tailwindcss.com/docs/guides/nuxtjs)
+- [Apollo](https://apollo.vuejs.org/guide/apollo/)
+- [Pinia](https://pinia.vuejs.org/ssr/nuxt.html)
+- [Vitest](https://nuxt.com/docs/getting-started/testing)
