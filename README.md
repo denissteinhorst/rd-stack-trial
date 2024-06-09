@@ -1,6 +1,13 @@
 # rd-stack-trial
 just a quick test of a tech stack I would like to try ;)
 
+
+## Project History
+1. Created a new Nuxt 3 project,
+1. Added `Tailwind CSS`, `Apollo`, `Pinia`, `Vitest`, `Cypress` and `I18N` to the project,
+1. Added very basic `Todo-App-Components` (static data / no API "yet"),
+
+
 ## Usage
 This project uses [pnpm](https://pnpm.io/) as the package manager. You can install it by running the following command:
 `npm install -g pnpm` assuming you have Node.js installed. ;)
@@ -17,6 +24,7 @@ pnpm test:unit # Run unit tests
 pnpm test:unit-ui # Run unit tests with UI
 pnpm test:e2e # Run E2E tests (Starts server, waits for URL, then runs test command; when the tests end, shuts down server)
 ```
+
 
 ## Command History
 In case you want to trace my steps and see how I got here, here is a list of commands I ran to get to this point.
@@ -69,6 +77,7 @@ In case you want to trace my steps and see how I got here, here is a list of com
 - pnpm dev # Check if the I18N is working using the example code
 - git add . && git commit -m "Add I18N" # Commit the changes
 ```
+
 
 ## Documentation
 As I really disliked the cluttered `Command History`-Section, I decided to move the documentation links to this section.
