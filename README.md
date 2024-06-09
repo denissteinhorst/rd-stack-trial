@@ -41,4 +41,10 @@ In case you want to trace my steps and see how I got here, here is a list of com
 - # Enable Module, Add Nuxt-Pinia Config as described in the [documentation](https://pinia.vuejs.org/ssr/nuxt.html)
 - pnpm dev # Check if the pinia is working using the example code
 - git add . && git commit -m "Add Pinia" # Commit the changes
+
+# Vitest
+- pnpm add -D @nuxt/test-utils vitest @vue/test-utils happy-dom
+- # Add Vitest Config as described in the [documentation](https://vitest.io/docs/getting-started/nuxt)
+- # Add run-scripts, moved app to BasicApp Component, added a test for to check if the tests are working
+- git add . && git commit -m "Add Vitest" # Commit the changes
 ```

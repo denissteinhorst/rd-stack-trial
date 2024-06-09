@@ -7,7 +7,9 @@
     "dev": "nuxt dev",
     "generate": "nuxt generate",
     "preview": "nuxt preview",
-    "postinstall": "nuxt prepare"
+    "postinstall": "nuxt prepare",
+    "test:unit": "vitest -c ./vitest.config.js",
+    "test:unit-ui": "vitest --ui -c ./vitest.config.js"
   },
   "dependencies": {
     "@pinia/nuxt": "^0.5.1",
@@ -16,9 +18,13 @@
     "vue-router": "^4.3.2"
   },
   "devDependencies": {
+    "@nuxt/test-utils": "^3.13.1",
     "@nuxtjs/apollo": "5.0.0-alpha.14",
+    "@vue/test-utils": "^2.4.6",
     "autoprefixer": "^10.4.19",
+    "happy-dom": "^14.12.0",
     "postcss": "^8.4.38",
-    "tailwindcss": "^3.4.4"
+    "tailwindcss": "^3.4.4",
+    "vitest": "^1.6.0"
   }
 }
