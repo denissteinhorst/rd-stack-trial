@@ -1,17 +1,18 @@
 # rd-stack-trial
 just a quick test of a tech stack I would like to try ;)
 
-Look at the [Nuxt 3 documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
-
 ## Usage
+This project uses [pnpm](https://pnpm.io/) as the package manager. You can install it by running the following command:
+`npm install -g pnpm` assuming you have Node.js installed. ;)
+
 ```bash
 pnpm install # install dependencies
 pnpm run dev # Start the development server on `http://localhost:3000`
 pnpm run build # Build the application for production
 pnpm run preview # Locally preview production build
 ```
-
-## 
+## Command History
+In case you want to trace my steps and see how I got here, here is a list of commands I ran to get to this point.
 
 ```bash
 # NUXT
@@ -23,4 +24,9 @@ pnpm run preview # Locally preview production build
 - pnpm dev # Check if the project runs
 - git add . && git commit -m "Init Nuxt" # Commit the changes
 
+# TAILWIND
+- pnpm add -D tailwindcss postcss autoprefixer # Install Tailwind CSS
+- pnpx tailwindcss init # Create a Tailwind CSS config file
+- # Add PostCSS config, Template-Paths, Directives and Global styles as described in the (documentation)[https://tailwindcss.com/docs/guides/nuxtjs]
+- git add . && git commit -m "Add Tailwind" # Commit the changes
 ```
