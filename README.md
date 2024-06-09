@@ -33,5 +33,12 @@ In case you want to trace my steps and see how I got here, here is a list of com
 # Apollo
 - pnpm add -D @nuxtjs/apollo@next
 - # Enable Module, Add Nuxt-Apollo Config as described in the [documentation](https://apollo.vuejs.org/guide/apollo/)
+- pnpm dev # Check if the Apollo is working using the example code
 - git add . && git commit -m "Add Apollo" # Commit the changes
+
+# Pinia
+- pnpm add @pinia/nuxt
+- # Enable Module, Add Nuxt-Pinia Config as described in the [documentation](https://pinia.vuejs.org/ssr/nuxt.html)
+- pnpm dev # Check if the pinia is working using the example code
+- git add . && git commit -m "Add Pinia" # Commit the changes
 ```
