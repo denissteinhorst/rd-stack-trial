@@ -27,6 +27,11 @@ In case you want to trace my steps and see how I got here, here is a list of com
 # TAILWIND
 - pnpm add -D tailwindcss postcss autoprefixer # Install Tailwind CSS
 - pnpx tailwindcss init # Create a Tailwind CSS config file
-- # Add PostCSS config, Template-Paths, Directives and Global styles as described in the (documentation)[https://tailwindcss.com/docs/guides/nuxtjs]
+- # Add PostCSS config, Template-Paths, Directives and Global styles as described in the [documentation](https://tailwindcss.com/docs/guides/nuxtjs)
 - git add . && git commit -m "Add Tailwind" # Commit the changes
+
+# Apollo
+- pnpm add -D @nuxtjs/apollo@next
+- # Enable Module, Add Nuxt-Apollo Config as described in the [documentation](https://apollo.vuejs.org/guide/apollo/)
+- git add . && git commit -m "Add Apollo" # Commit the changes
 ```
