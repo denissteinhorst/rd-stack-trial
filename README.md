@@ -15,6 +15,7 @@ pnpm preview # Locally preview production build
 pnpm postinstall # Run nuxt post install script
 pnpm test:unit # Run unit tests
 pnpm test:unit-ui # Run unit tests with UI
+pnpm test:e2e # Run E2E tests (Starts server, waits for URL, then runs test command; when the tests end, shuts down server)
 ```
 
 ## Command History
@@ -31,7 +32,7 @@ In case you want to trace my steps and see how I got here, here is a list of com
 - git add . && git commit -m "Init Nuxt" # Commit the changes
 
 # TAILWIND
-- pnpm add -D tailwindcss postcss autoprefixer # Install Tailwind CSS
+- pnpm add -D tailwindcss postcss autoprefixer 
 - pnpx tailwindcss init # Create a Tailwind CSS config file
 - # Add PostCSS config, Template-Paths, Directives and Global styles as described in the documentation
 - git add . && git commit -m "Add Tailwind" # Commit the changes
@@ -52,7 +53,15 @@ In case you want to trace my steps and see how I got here, here is a list of com
 - pnpm add -D @nuxt/test-utils vitest @vue/test-utils happy-dom
 - # Add Vitest Config as described in the documentation
 - # Add run-scripts, moved app to BasicApp Component, added a test for to check if the tests are working
+- pnpm test:unit # Check if the vitest is working 
 - git add . && git commit -m "Add Vitest" # Commit the changes
+
+# Cypress
+- pnpm add -D cypress start-server-and-test
+- pnpx cypress open # Open the Cypress GUI - Select: E2E-Test, Chrome
+- # Add E2E-Test, Add run-scripts using start-server-and-test
+- pnpm test:e2e # Check if the cypress is working 
+- git add . && git commit -m "Add Cypress" # Commit the changes
 ```
 
 ## Documentation
@@ -65,3 +74,5 @@ As I really disliked the cluttered `Command History`-Section, I decided to move 
 - [Apollo](https://apollo.vuejs.org/guide/apollo/)
 - [Pinia](https://pinia.vuejs.org/ssr/nuxt.html)
 - [Vitest](https://nuxt.com/docs/getting-started/testing)
+- [Cypress](https://docs.cypress.io/guides/component-testing/vue/overview)
+- [start-server-and-test](https://github.com/bahmutov/start-server-and-test)
