@@ -1,14 +1,16 @@
 # rd-stack-trial
+
 just a quick test of a tech stack I would like to try ;)
 
-
 ## Project History
+
 1. Created a new Nuxt 3 project,
 1. Added `Tailwind CSS`, `Apollo`, `Pinia`, `Vitest`, `Cypress` and `I18N` to the project,
 1. Added very basic `Todo-App-Components` (static data / no API "yet"),
-
+1. Added prettier and eslint to the project (QOL),
 
 ## Usage
+
 This project uses [pnpm](https://pnpm.io/) as the package manager. You can install it by running the following command:
 `npm install -g pnpm` assuming you have Node.js installed. ;)
 
@@ -23,10 +25,13 @@ pnpm postinstall # Run nuxt post install script
 pnpm test:unit # Run unit tests
 pnpm test:unit-ui # Run unit tests with UI
 pnpm test:e2e # Run E2E tests (Starts server, waits for URL, then runs test command; when the tests end, shuts down server)
+pnpm lint:eslint # Run eslint
+pnpm lint:prettier # Run prettier
+pnpm lintfix # Run eslint --fix and prettier --write
 ```
 
-
 ## Command History
+
 In case you want to trace my steps and see how I got here, here is a list of commands I ran to get to this point.
 
 ```bash
@@ -40,7 +45,7 @@ In case you want to trace my steps and see how I got here, here is a list of com
 - git add . && git commit -m "Init Nuxt" # Commit the changes
 
 # TAILWIND
-- pnpm add -D tailwindcss postcss autoprefixer 
+- pnpm add -D tailwindcss postcss autoprefixer
 - pnpx tailwindcss init # Create a Tailwind CSS config file
 - # Add PostCSS config, Template-Paths, Directives and Global styles as described in the documentation
 - git add . && git commit -m "Add Tailwind" # Commit the changes
@@ -61,14 +66,14 @@ In case you want to trace my steps and see how I got here, here is a list of com
 - pnpm add -D @nuxt/test-utils vitest @vue/test-utils happy-dom
 - # Add Vitest Config as described in the documentation
 - # Add run-scripts, moved app to BasicApp Component, added a test for to check if the tests are working
-- pnpm test:unit # Check if the vitest is working 
+- pnpm test:unit # Check if the vitest is working
 - git add . && git commit -m "Add Vitest" # Commit the changes
 
 # Cypress
 - pnpm add -D cypress start-server-and-test
 - pnpx cypress open # Open the Cypress GUI - Select: E2E-Test, Chrome
 - # Add E2E-Test, Add run-scripts using start-server-and-test
-- pnpm test:e2e # Check if the cypress is working 
+- pnpm test:e2e # Check if the cypress is working
 - git add . && git commit -m "Add Cypress" # Commit the changes
 
 # I18N
@@ -76,10 +81,17 @@ In case you want to trace my steps and see how I got here, here is a list of com
 - # Add I18N Config as described in the documentation
 - pnpm dev # Check if the I18N is working using the example code
 - git add . && git commit -m "Add I18N" # Commit the changes
+
+# Prettier & Eslint
+- pnpm add prettier eslint-config-prettier eslint-plugin-prettier
+- pnpm add -D eslint @nuxt/eslint @nuxt/eslint-config prettier-plugin-tailwindcss
+- # Add Prettier Config, Add Eslint Config, Add run-scripts
+- pnpm lintfix # Check if the Prettier & Eslint are working (and fix things :P)
+- git add . && git commit -m "Add Prettier/ESLint" # Commit the changes
 ```
 
-
 ## Documentation
+
 As I really disliked the cluttered `Command History`-Section, I decided to move the documentation links to this section.
 
 - [PNPM](https://pnpm.io/installation)
@@ -92,4 +104,10 @@ As I really disliked the cluttered `Command History`-Section, I decided to move 
 - [Cypress](https://docs.cypress.io/guides/component-testing/vue/overview)
 - [start-server-and-test](https://github.com/bahmutov/start-server-and-test)
 - [I18N](https://i18n.nuxtjs.org/docs/getting-started)
+- [Prettier](https://prettier.io/docs/en/install.html)
+- [Eslint](https://eslint.nuxt.com/packages/config)
+- [Tailwind CSS Plugin](https://tailwindcss.com/blog/automatic-class-sorting-with-prettier)
+
+```
+
 ```
