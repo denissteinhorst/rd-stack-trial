@@ -26,22 +26,29 @@
       <div class="mt-8">
         <TodoInput />
       </div>
-      <div class="mt-8">
-        <TodoList :todos />
+      <div  class="mt-8">
+        <template v-if="items">
+          <TodoList :todos="items" :show="5" />
+        </template>
       </div>
     </div>
-    <p class="pt-8 text-center text-xs text-slate-500">{{ $t('lastEdit') }} {{ lastUpdated }}</p>
+    <div v-if="response" class="mt-5 opacity-75 mx-auto max-w-lg rounded-xl bg-black text-white font-mono p-8 shadow shadow-slate-300">
+      <pre class="text-wrap">{{ response }}</pre>
+    </div>
   </div>
 </template>
 <script setup lang="ts">
-import type { ITodoItem } from './components/TodoItem/TodoItem.vue'
+import { useTodoApi } from "~/composables/useTodoApi";
+import { useApiResponseStore } from '~/stores/apiResponseStore';
+import { useTodoStore } from "~/stores/todoStore";
 
+const { getTodos } = useTodoApi();
+const { items } = useTodoStore();
+const apiResponse = useApiResponseStore()
 const { locale, setLocale } = useI18n()
-const lastUpdated = ref(0)
+const response = ref()
 
-const todos = ref<ITodoItem[]>([
-  { id: 1, title: 'Never gonna give you up', completed: true },
-  { id: 2, title: 'Never gonna let you down', completed: false },
-  { id: 3, title: ' Never gonna run around and desert you', completed: false },
-])
+watch(apiResponse, () => response.value = apiResponse)
+onMounted( async () => await getTodos());
 </script>
+

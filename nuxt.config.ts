@@ -5,7 +5,7 @@ export default defineNuxtConfig({
   apollo: {
     clients: {
       default: {
-        httpEndpoint: 'https://spacex-production.up.railway.app',
+        httpEndpoint: 'https://graphqlzero.almansi.me/api',
       },
     },
   },

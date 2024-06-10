@@ -2,7 +2,6 @@
   <div class="flex items-center justify-center">
     <div class="relative flex h-10 w-full">
       <label
-        for="file-upload"
         class="absolute right-1 top-1 z-10 select-none rounded bg-blue-500 px-4 py-2 text-center align-middle font-sans text-xs font-bold uppercase text-white transition-all hover:bg-blue-600 hover:shadow-lg focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85]"
         @click.prevent="saveTodo"
       >
@@ -10,7 +9,7 @@
       </label>
       <div class="relative flex-1">
         <input
-          v-model="todo"
+          v-model="todoInputField"
           type="text"
           class="border-blue-gray-200 text-blue-gray-700 placeholder-shown:border-blue-gray-200 placeholder-shown:border-t-blue-gray-200 disabled:bg-blue-gray-50 peer relative h-full w-full rounded-[7px] border bg-transparent px-3 py-2.5 pr-20 font-sans text-sm font-normal outline outline-0 transition-all placeholder-shown:border focus:border-2 focus:border-blue-500 focus:border-t-transparent focus:outline-0 disabled:border-0"
           placeholder=" "
@@ -27,15 +26,21 @@
 </template>
 
 <script setup lang="ts">
-const todo = ref<string>('')
+import { useTodoApi } from "~/composables/useTodoApi";
+const { createTodo } = await useTodoApi()
+import { useTodoStore } from "~/stores/todoStore";
+
+const todoInputField = ref<string>('')
+const { items } = useTodoStore()
+
 const saveTodo = () => {
-  if (todo.value !== '') {
-    alert(todo.value)
-    todo.value = ''
+  if (todoInputField.value !== '') {
+    createTodo({
+      id: items.length + 1,
+      title: todoInputField.value,
+      completed: false
+    })
+    todoInputField.value = ''
   }
 }
-
-watch(todo, (newVal) => {
-  console.log(newVal)
-})
 </script>

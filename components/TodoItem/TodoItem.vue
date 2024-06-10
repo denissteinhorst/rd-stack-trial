@@ -6,6 +6,7 @@
           type="checkbox"
           class="h-3 w-3 text-slate-500 hover:cursor-pointer hover:text-indigo-600"
           :checked="props.completed"
+          @change="updateTodo({ id: props.id, title: props.title, completed: !props.completed })"
         />
       </div>
       <div :class="['text-slate-500', { 'line-through': props.completed }]">
@@ -20,6 +21,7 @@
         stroke-width="1.5"
         stroke="currentColor"
         class="h-4 w-4 text-slate-500 hover:cursor-pointer hover:text-slate-700"
+        @click="deleteTodo(props.id)"
       >
         <path
           stroke-linecap="round"
@@ -32,10 +34,10 @@
 </template>
 
 <script setup lang="ts">
-export interface ITodoItem {
-  id: number
-  title: string
-  completed: boolean
-}
-const props = defineProps<ITodoItem>()
+import type { ITodo } from '~/types/type';
+import { useTodoApi } from '@/composables/useTodoApi'
+
+const props = defineProps<ITodo>()
+const { updateTodo, deleteTodo } = await useTodoApi()
+
 </script>
