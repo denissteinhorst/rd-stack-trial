@@ -1,9 +1,9 @@
 <template>
   <ul class="my-5">
     <TodoItem
-        v-for="todo in props.todos"
-        :key="parseInt(todo.id)"
-        :id="parseInt(todo.id)"
+        v-for="(todo, index) in props.todos"
+        :key="index"
+        :id="todo.id"
         :title="todo.title"
         :completed="todo.completed"
     />

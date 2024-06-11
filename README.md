@@ -5,9 +5,13 @@ just a quick test of a tech stack I would like to try ;)
 ## Project History
 
 1. Created a new Nuxt 3 project,
-1. Added `Tailwind CSS`, `Apollo`, `Pinia`, `Vitest`, `Cypress` and `I18N` to the project,
-1. Added very basic `Todo-App-Components` (static data / no API "yet"),
-1. Added prettier and eslint to the project (QOL),
+1. Added: `Tailwind CSS`, `Apollo`, `Pinia`, `Vitest`, `Cypress` and `I18N` to the project,
+1. Removed: the `BasicApp`-Component,
+1. Added: very basic `Todo-App-Components` (static data / no API "yet"),
+1. Added: prettier and eslint to the project (QOL),
+1. Added: a Composable to perform basic CRUD operations on the Todos (https://graphqlzero.almansi.me/api)
+1. Added: a store to manage the Todos (Pinia) -not persistent yet-
+1. Chore: Updated the `README.md`; Light-Refactoring (removed unused code, added comments, types, etc.)
 
 ## Usage
 

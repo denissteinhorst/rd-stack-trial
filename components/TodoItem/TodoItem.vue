@@ -38,6 +38,5 @@ import type { ITodo } from '~/types/type';
 import { useTodoApi } from '@/composables/useTodoApi'
 
 const props = defineProps<ITodo>()
-const { updateTodo, deleteTodo } = await useTodoApi()
-
+const { updateTodo, deleteTodo } = useTodoApi()
 </script>

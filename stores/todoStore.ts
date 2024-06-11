@@ -12,8 +12,6 @@ export const useTodoStore = defineStore('todoItem', () => {
   const addItem = (todoItem?: ITodo) => {
     if (todoItem && !items.value.find((item) => item.title === todoItem.title)) {
       items.value.unshift(todoItem);
-      console.log(items.value)
-
     }
   };
 
@@ -24,12 +22,11 @@ export const useTodoStore = defineStore('todoItem', () => {
     }
   };
 
-  const deleteItem = (id: number) => {
-    const index = items.value.findIndex((item) => parseInt(item.id) === id);
+  const deleteItem = (id: string) => {
+    const index = items.value.findIndex((item) => item.id === id);
     if (index !== -1) {
       items.value.splice(index, 1);
     }
-
   };
 
   return { todoStore: { addItem, updateItem, deleteItem }, items };

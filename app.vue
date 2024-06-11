@@ -49,6 +49,7 @@ const { locale, setLocale } = useI18n()
 const response = ref()
 
 watch(apiResponse, () => response.value = apiResponse)
+
 onMounted( async () => await getTodos());
 </script>
 
