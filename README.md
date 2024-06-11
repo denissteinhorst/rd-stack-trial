@@ -12,6 +12,8 @@ just a quick test of a tech stack I would like to try ;)
 1. Added: a Composable to perform basic CRUD operations on the Todos (https://graphqlzero.almansi.me/api)
 1. Added: a store to manage the Todos (Pinia) -not persistent yet-
 1. Chore: Updated the `README.md`; Light-Refactoring (removed unused code, added comments, types, etc.)
+1. Added: `@vitejs/plugin-vue` to the project
+1. Added: Unit-Tests for the Composables
 
 ## Usage
 

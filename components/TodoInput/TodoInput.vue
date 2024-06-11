@@ -1,12 +1,18 @@
 <template>
   <div class="flex items-center justify-center">
     <div class="relative flex h-10 w-full">
-      <label
-        class="absolute right-1 top-1 z-10 select-none rounded bg-blue-500 px-4 py-2 text-center align-middle font-sans text-xs font-bold uppercase text-white transition-all hover:bg-blue-600 hover:shadow-lg focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85]"
+      <button
+        :class="[
+          'absolute right-1 top-1 z-10 select-none rounded px-4 py-2 text-center align-middle font-sans text-xs font-bold uppercase transition-all',
+          {
+            'cursor-not-allowed bg-gray-200': isDisabled,
+            'cursor-pointer bg-blue-500 hover:bg-blue-600 hover:shadow-lg focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] text-white': !isDisabled
+          }]"
         @click.prevent="saveTodo"
+        :disabled="isDisabled"
       >
         {{ $t('saveEntry') }}
-      </label>
+      </button>
       <div class="relative flex-1">
         <input
           v-model="todoInputField"
@@ -32,11 +38,12 @@ import { useTodoStore } from "~/stores/todoStore";
 const { createTodo } = await useTodoApi()
 const { items } = useTodoStore()
 const todoInputField = ref<string>()
+const isDisabled = ref(true)
 
 const clearInput = () => todoInputField.value = ''
 
 const saveTodo = () => {
-  if (todoInputField.value === '') return
+  if (isDisabled.value) return
 
   createTodo({
     id: String(items.length + 1),
@@ -46,4 +53,8 @@ const saveTodo = () => {
 
   clearInput()
 }
+
+watch(todoInputField, (value) => {
+  isDisabled.value = !value
+})
 </script>
