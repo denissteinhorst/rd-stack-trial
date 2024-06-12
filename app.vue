@@ -7,6 +7,7 @@
         </div>
         <div class="text-xs">
           <button
+            id="changeLocale"
             v-if="locale === 'de'"
             class="h-8 select-none rounded bg-gray-200 px-4 text-center align-middle font-sans text-xs font-bold uppercase text-gray-700 transition-all hover:bg-gray-300 hover:shadow-lg focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85]"
             @click="setLocale('en')"
@@ -14,6 +15,7 @@
             EN
           </button>
           <button
+            id="changeLocale"
             v-else
             class="h-8 select-none rounded bg-gray-200 px-4 text-center align-middle font-sans text-xs font-bold uppercase text-gray-700 transition-all hover:bg-gray-300 hover:shadow-lg focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85]"
             @click="setLocale('de')"
@@ -22,7 +24,7 @@
           </button>
         </div>
       </div>
-      <p class="pt-3 text-slate-500">{{ $t('intro') }} 🎉</p>
+      <p class="pt-3 text-slate-500">{{ $t('intro') }}</p>
       <div class="mt-8">
         <TodoInput />
       </div>

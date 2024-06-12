@@ -10,7 +10,7 @@
     "postinstall": "nuxt prepare",
     "test:unit": "vitest -c ./vitest.config.js",
     "test:unit-ui": "vitest --ui -c ./vitest.config.js",
-    "test:e2e": "start-server-and-test dev http://localhost:3000 cypress:open",
+    "test:e2e": "start-server-and-test 'pnpm dev' http://localhost:3000 'cypress open'",
     "lint:eslint": "eslint .",
     "lint:prettier": "prettier . --check",
     "lintfix": "eslint . --fix && prettier --write --list-different ."

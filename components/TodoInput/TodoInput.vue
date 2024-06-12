@@ -2,6 +2,7 @@
   <div class="flex items-center justify-center">
     <div class="relative flex h-10 w-full">
       <button
+          id="todoInputButton"
         :class="[
           'absolute right-1 top-1 z-10 select-none rounded px-4 py-2 text-center align-middle font-sans text-xs font-bold uppercase transition-all',
           {
@@ -16,6 +17,7 @@
       <div class="relative flex-1">
         <input
           v-model="todoInputField"
+          id="todoInput"
           class="border-blue-gray-200 text-blue-gray-700 placeholder-shown:border-blue-gray-200 placeholder-shown:border-t-blue-gray-200 disabled:bg-blue-gray-50 peer relative h-full w-full rounded-[7px] border bg-transparent px-3 py-2.5 pr-20 font-sans text-sm font-normal outline outline-0 transition-all placeholder-shown:border focus:border-2 focus:border-blue-500 focus:border-t-transparent focus:outline-0 disabled:border-0"
           type="text"
           placeholder=" "

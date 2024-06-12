@@ -14,6 +14,7 @@ just a quick test of a tech stack I would like to try ;)
 1. Chore: Updated the `README.md`; Light-Refactoring (removed unused code, added comments, types, etc.)
 1. Added: `@vitejs/plugin-vue` to the project
 1. Added: Unit-Tests for the Composables
+1. Added: E2E-Tests for the Todo-App
 
 ## Usage
 
@@ -69,7 +70,7 @@ In case you want to trace my steps and see how I got here, here is a list of com
 - git add . && git commit -m "Add Pinia" # Commit the changes
 
 # Vitest
-- pnpm add -D @nuxt/test-utils vitest @vue/test-utils happy-dom
+- pnpm add -D @nuxt/test-utils vitest @vue/test-utils @vitejs/plugin-vue happy-dom
 - # Add Vitest Config as described in the documentation
 - # Add run-scripts, moved app to BasicApp Component, added a test for to check if the tests are working
 - pnpm test:unit # Check if the vitest is working
